@@ -34,7 +34,6 @@ def oofer():
    wtf()
    changenow()
 
-
 def tenlet():
    tenLetter()
    changenowforten()
@@ -43,6 +42,11 @@ def twentylet():
     twentyLetter()
     changenowfortwenty()
 
+def ghostMode():
+    if var1.get() == 1:
+        lbl.config(fg='white')
+    if var1.get() == 0:
+        lbl.config(fg='red')
 
 #creating the window
 window=Tk()
@@ -54,10 +58,14 @@ btn3=Button(window, text="Generate 20 Character Password", fg='blue', command = 
 btn3.place(x=0, y=210)
 copy1=Button(window, text="Copy", fg='blue', command = addToClipBoard)
 copy1.place(x=350, y=228)
-lbl=Label(window, text="Password Generator", fg='red', font=("Comic_Sans", 16))
-lbl.place(x=100, y=10)
+lbl1=Label(window, text="Password Generator", fg='red', font=("Comic_Sans", 16))
+lbl1.place(x=100, y=10)
+var1 = IntVar()
+c1 = Checkbutton(window, text='Python',variable=var1, onvalue=1, offvalue=0, command=ghostMode)
+c1.pack()
+c1.place(x=50, y=50)
 lbl=Label(window, text  = og , anchor = "e", justify = RIGHT, fg='red', width = 20, font=("Comic_Sans", 16))
-lbl.place(x=170, y=250)
+lbl.place(x=190, y=260)
 window.title('Mysts Password Gen')
 window.geometry("400x300")
 window.mainloop()
